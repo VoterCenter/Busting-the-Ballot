@@ -1,0 +1,34 @@
+name: TWINS_Environ
+channels:
+  - defaults
+dependencies:
+  - pip:
+    - absl-py==1.1.0
+    - contextlib2==21.6.0
+    - eagerpy==0.30.0
+    - einops==0.6.0
+    - filelock==3.9.0
+    - foolbox==3.3.3
+    - gitdb==4.0.10
+    - gitpython==3.1.31
+    - h5py==3.8.0
+    - huggingface-hub==0.11.1
+    - imageio==2.31.1
+    - joblib==1.2.0
+    - ml-collections==0.1.1
+    - numpy==1.22.4
+    - opencv-python==4.7.0.68
+    - ordereddict==1.1
+    - pillow==9.1.1
+    - scikit-learn==1.2.2
+    - smmap==5.0.0
+    - spikingjelly==0.0.0.0.12
+    - termcolor==2.1.1
+    - threadpoolctl==3.1.0
+    - timm==0.3.2
+    - torch==1.7.1+cu110
+    - torchaudio==0.7.2
+    - torchsummary==1.5.1
+    - torchvision==0.8.2+cu110
+    - typing-extensions==4.2.0
+    - yacs==0.1.8

@@ -1,0 +1,32 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Manicke"
+  given-names: "Caleb"
+  orcid: "https://orcid.org/0009-0007-6409-5343"
+- family-names: "Rathburn"
+  given-names: "Ethan"
+  orcid: "https://orcid.org/0000-0002-5437-2489"
+- family-names: "Ahmad"
+  given-names: "Sohaib"
+  orcid: "https://orcid.org/0000-0001-6720-0507"
+- family-names: "Stamatakis"
+  given-names: "Nicholas"
+  orcid: "https://orcid.org/0009-0000-1440-7192"
+- family-names: "Verma"
+  given-names: "Aayushi"
+  orcid: "https://orcid.org/0000-0003-2396-4569"
+- family-names: "Fuller"
+  given-names: "Benjamin, W."
+  orcid: "https://orcid.org/0000-0001-6450-0088"
+- family-names: "Michel"
+  given-names: "Laurent, D."
+  orcid: "https://orcid.org/0000-0001-7230-7130"
+- family-names: "Mahmood"
+  given-names: "Kaleel"
+  orcid: "https://orcid.org/0000-0002-7672-4449"
+title: "Busting the Ballot"
+version: 1.0.0
+doi: 10.5281/zenodo.15458710
+date-released: 2025-05-28
+url: "https://github.com/CalebManicke/Busting-the-Ballot"
