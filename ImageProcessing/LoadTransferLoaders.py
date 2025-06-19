@@ -1,10 +1,6 @@
 # Import files from other VoterLab folders
 import sys
-sys.path.insert(0, '/share/bfuller/Busting-the-Ballot/Main')
-sys.path.insert(0, '/share/bfuller/Busting-the-Ballot/Models')
-sys.path.insert(0, '/share/bfuller/Busting-the-Ballot/Utilities')
-sys.path.insert(0, '/share/bfuller/Busting-the-Ballot')
-sys.path.insert(0, '/share/bfuller/Busting-the-Ballot/Attacks')
+from pathlib import Path
 
 # Non-torch libraries
 import numpy as np
@@ -31,11 +27,13 @@ import torch.optim as optim
 # Model & attack libraries 
 # from TrainMultiOutputModels import ReturnBalancedDataLoader, validateReturn
 # from LoadScannedBubbles import ReturnScannedDataLoader, OrganizeScannedDataLoader
-import VoterLab_Classifier_Functions as voterlab
-import DataManagerPytorch as datamanager
-import LoadVoterData as LoadVoterData
-from LoadScannedBubbles import ReturnOrganizedScannedDataLoader
+import Utilities.VoterLab_Classifier_Functions as voterlab
+import Utilities.DataManagerPytorch as datamanager
+# import Utilities.LoadVoterData as LoadVoterData
+from ImageProcessing.LoadScannedBubbles import ReturnOrganizedScannedDataLoader
 
+# defining global variables for paths
+BASE_DIR = Path(__file__).resolve().parents[1] # how many levels up the basedir is from the location of this script
 
 # Hyperparameters
 epsilon_values = [0.01568, 0.03137, 0.06274, 0.12549, 0.25098, 1.0]
@@ -374,11 +372,11 @@ if __name__ == '__main__':
                 '''
                 # For printing said bubbles
                 #load_dir = base_dir + model+ '//' + model + '//' + print_status + '//'
-                load_dir = base_dir + '/APGD-DLR_Npys/' + model + '/' + print_status + '/' 
-                load_location = load_dir + str(epsilon) + '.npy'
+                load_dir = BASE_DIR / f'APGD-DLR_Npys/{model}/{print_status}/' 
+                load_location = f'{load_dir}{str(epsilon)}.npy'    
                 non_vote_data = np.load(load_location)
                 non_vote_loader = datamanager.TensorToDataLoader(xData = non_vote_data, yData = torch.zeros(len(non_vote_data)), batchSize = 1)
-                save_dir = base_dir + '/'+model+ '/' + model + '_Double_Check_Denoised_Npys_Loaders' '/' + print_status + '/' + epsilon
+                save_dir = BASE_DIR + f'/{model}/{model}_Double_Check_Denoised_Npys_Loaders/{print_status}/{epsilon}'
                 if not os.path.exists(save_dir): os.makedirs(save_dir)
                 voterlab.DisplayImgs (dataLoader = non_vote_loader, greyScale = True, saveDir = save_dir, printMisclassified = False, wrongLocation = None, printRealLabel = False)
     
