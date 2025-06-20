@@ -7,25 +7,22 @@ import torch.nn.functional as F
 import torch.nn.init as init
 from torch.autograd import Variable
 from torchsummary import summary
-from LoadVoterData import LoadData
 import numpy as np
 import torch
+import os
+from PIL import Image
+from random import shuffle
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 import torch.optim.lr_scheduler as schedulers
-#import seaborn as sns
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 from torchvision.models.densenet import DenseNet
 import torch.optim as optim
-#import AttackWrappersWhiteBoxP as attack
-from random import shuffle
-#import APGD
-import DataManagerPytorch as datamanager
-import os
-from PIL import Image
-from random import shuffle
-import LoadVoterData
+
+from Utilities.LoadVoterData import LoadData
+import Utilities.DataManagerPytorch as datamanager
+import Utilities.LoadVoterData
 
 # Save all loaders to color & greyscale directories
 saveDirRGB =  os.path.dirname(os.getcwd())  + "//Train//Trained_RGB_VoterLab_Models//"
